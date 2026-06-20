@@ -1,0 +1,10 @@
+@echo off
+set LOGFILE=C:\temp\ping_log.txt
+echo Starting Ping Test... >> %LOGFILE%
+
+:loop
+echo --- %date% %time% --- >> %LOGFILE%
+ping 8.8.8.8 -n 1 >> %LOGFILE%
+timeout /t 5 >nul
+goto loop
+
